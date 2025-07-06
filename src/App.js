@@ -489,6 +489,7 @@ const DENOMS = [5, 10, 20, 50, 100, 500, 1000];
 const payoutTable = {
   zeki: 2,
   tehno: 3,
+  zarzin:4,
   bojche_koks: 5,
   aco_resen: 8,
   sigma: 12,
