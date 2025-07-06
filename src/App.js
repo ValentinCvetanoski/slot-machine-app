@@ -429,7 +429,7 @@ const symbolsWeighted = [
   ...Array(9).fill("cele"),
   ...Array(6).fill("wild"),
   ...Array(5).fill("seven"),
-  ...Array(455).fill("paleni_bonus")
+  ...Array(4).fill("paleni_bonus")
 ];
 const DENOMS = [5, 10, 20, 50, 100, 500, 1000];
 const payoutTable = {
