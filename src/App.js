@@ -19,43 +19,43 @@ body, html, #root {
 
 // Animations
 const dropIn = keyframes`
-  0% { transform: translateY(-200%) scale(0.8); opacity: 0; }
-  70% { transform: translateY(10%) scale(1.1); opacity: 1; }
-  100% { transform: translateY(0) scale(1); opacity: 1; }
+0% { transform: translateY(-200%) scale(0.8); opacity: 0; }
+70% { transform: translateY(10%) scale(1.1); opacity: 1; }
+100% { transform: translateY(0) scale(1); opacity: 1; }
 `;
 const glowAnimation = keyframes`
-  0%, 100% {
-    box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 40px #ff0000, 0 0 60px #ff0000;
-  }
-  50% {
-    box-shadow: 0 0 20px #ff4d4d, 0 0 40px #ff4d4d, 0 0 60px #ff4d4d, 0 0 80px #ff4d4d;
-  }
+0%, 100% {
+  box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 40px #ff0000, 0 0 60px #ff0000;
+}
+50% {
+  box-shadow: 0 0 20px #ff4d4d, 0 0 40px #ff4d4d, 0 0 60px #ff4d4d, 0 0 80px #ff4d4d;
+}
 `;
 const explosionAnim = keyframes`
-  0% { transform: scale(0.5); opacity: 1; }
-  80% { transform: scale(1.5); opacity: 0.7; }
-  100% { transform: scale(2); opacity: 0; }
+0% { transform: scale(0.5); opacity: 1; }
+80% { transform: scale(1.5); opacity: 0.7; }
+100% { transform: scale(2); opacity: 0; }
 `;
 const spinningReel = keyframes`
-  0% { transform: rotateY(0deg); }
-  100% { transform: rotateY(360deg); }
+0% { transform: rotateY(0deg); }
+100% { transform: rotateY(360deg); }
 `;
 const blurSpin = keyframes`
-  0% { filter: blur(0px); transform: translateY(0px); }
-  50% { filter: blur(8px); transform: translateY(-20px); }
-  100% { filter: blur(0px); transform: translateY(0px); }
+0% { filter: blur(0px); transform: translateY(0px); }
+50% { filter: blur(8px); transform: translateY(-20px); }
+100% { filter: blur(0px); transform: translateY(0px); }
 `;
 const jumpAnimation = keyframes`
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-30px) scale(1.1); }
+0%, 100% { transform: translateY(0) scale(1); }
+50% { transform: translateY(-30px) scale(1.1); }
 `;
 const fireAnimation = keyframes`
-  0%, 100% {
-    filter: drop-shadow(0 0 20px #ff4500) drop-shadow(0 0 40px #ff4500);
-  }
-  50% {
-    filter: drop-shadow(0 0 30px #ff8c00) drop-shadow(0 0 60px #ff8c00);
-  }
+0%, 100% {
+  filter: drop-shadow(0 0 20px #ff4500) drop-shadow(0 0 40px #ff4500);
+}
+50% {
+  filter: drop-shadow(0 0 30px #ff8c00) drop-shadow(0 0 60px #ff8c00);
+}
 `;
 
 // Styled Components
@@ -72,7 +72,6 @@ const Wrapper = styled.div`
     padding: 10px 5px;
   }
 `;
-
 const Title = styled.h1`
   font-size: 5rem;
   font-weight: 900;
@@ -85,7 +84,6 @@ const Title = styled.h1`
     margin-bottom: 10px;
   }
 `;
-
 const SlotGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 130px);
@@ -98,7 +96,6 @@ const SlotGrid = styled.div`
     gap: 5px;
   }
 `;
-
 const Slot = styled.div`
   width: 130px;
   height: 130px;
@@ -132,14 +129,13 @@ const Slot = styled.div`
     &.spinning {
       animation: ${css`${spinningReel}`} 0.3s linear infinite;
     }
-  }
-  @media (max-width: 768px) {
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
+    @media (max-width: 768px) {
+      width: 50px;
+      height: 50px;
+      font-size: 1.2rem;
+    }
   }
 `;
-
 const BonusWin = styled.div`
   position: fixed;
   top: 25%;
@@ -155,7 +151,6 @@ const BonusWin = styled.div`
   @media (max-width: 768px) {
     width: 250px;
     height: 250px;
-    /* Center horizontally for mobile without changing top/left */
     left: 23%;
     transform: translate(-50%, -50%);
   }
@@ -166,7 +161,6 @@ const BonusWin = styled.div`
     user-select: none;
   }
 `;
-
 const Controls = styled.div`
   margin-top: 20px;
   width: 900px;
@@ -182,7 +176,6 @@ const Controls = styled.div`
     gap: 5px;
   }
 `;
-
 const BalanceText = styled.div`
   font-size: 1.4rem;
   user-select: none;
@@ -193,7 +186,6 @@ const BalanceText = styled.div`
     font-size: 1rem;
   }
 `;
-
 const BetOptions = styled.div`
   display: flex;
   gap: 8px;
@@ -203,7 +195,6 @@ const BetOptions = styled.div`
     gap: 4px;
   }
 `;
-
 const Button = styled.button`
   background: #11121a;
   color: #00ffff;
@@ -232,7 +223,6 @@ const Button = styled.button`
     font-size: 0.9rem;
   }
 `;
-
 const SpinButton = styled(Button)`
   margin-left: 10px;
   background: #00ffff;
@@ -249,7 +239,6 @@ const SpinButton = styled(Button)`
     padding: 10px 20px;
   }
 `;
-
 const AddMoneyButton = styled(Button)`
   background: #002222;
   border: 2px solid #00ffff;
@@ -258,7 +247,6 @@ const AddMoneyButton = styled(Button)`
     color: #11121a;
   }
 `;
-
 const ValueTableButton = styled(AddMoneyButton)`
   background: #220022;
   border-color: #ff00ff;
@@ -267,7 +255,6 @@ const ValueTableButton = styled(AddMoneyButton)`
     color: #111;
   }
 `;
-
 const WinCounter = styled.div`
   position: fixed;
   bottom: 20px;
@@ -290,7 +277,6 @@ const WinCounter = styled.div`
     right: 5px;
   }
 `;
-
 const PaylineInfo = styled.div`
   position: fixed;
   bottom: 20px;
@@ -313,7 +299,6 @@ const PaylineInfo = styled.div`
     left: 5px;
   }
 `;
-
 const ModalBackdrop = styled.div`
   position: fixed;
   top: 0;
@@ -326,7 +311,6 @@ const ModalBackdrop = styled.div`
   justify-content: center;
   z-index: 999;
 `;
-
 const ModalBox = styled.div`
   background: #11121a;
   border-radius: 15px;
@@ -342,7 +326,6 @@ const ModalBox = styled.div`
     padding: 1rem;
   }
 `;
-
 const ModalTitle = styled.h2`
   margin: 0 0 1rem;
   font-size: 1.8rem;
@@ -351,7 +334,6 @@ const ModalTitle = styled.h2`
     font-size: 1.3rem;
   }
 `;
-
 const ModalButton = styled.button`
   margin-top: 1rem;
   padding: 10px 20px;
@@ -372,7 +354,6 @@ const ModalButton = styled.button`
     font-size: 0.9rem;
   }
 `;
-
 const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
@@ -392,7 +373,6 @@ const Table = styled.table`
     }
   }
 `;
-
 const ParticleContainer = styled.div`
   position: fixed;
   pointer-events: none;
@@ -402,7 +382,6 @@ const ParticleContainer = styled.div`
   height: 80px;
   z-index: 1000;
 `;
-
 const Particle = styled.div`
   position: absolute;
   background: #00ffff;
@@ -413,11 +392,14 @@ const Particle = styled.div`
   animation-delay: ${props => props.delay}ms;
 `;
 
-// Symbol definitions
 const faces = [
   "zeki", "tehno", "bojche_koks", "aco_resen", "sigma",
-  "tino", "cele", "zarzin",
+  "tino", "cele", "zarzin", // zarzin covers xarxin
+  "srechko", // new rare
+  "shule"    // new rare
 ];
+
+// Symbol weights for normal spins
 const symbolsWeighted = [
   ...Array(20).fill("zeki"),
   ...Array(11).fill("zarzin"),
@@ -427,15 +409,38 @@ const symbolsWeighted = [
   ...Array(11).fill("sigma"),
   ...Array(11).fill("tino"),
   ...Array(9).fill("cele"),
+  ...Array(11).fill("srechko"), // rare
+  ...Array(11).fill("shule"),   // rare
   ...Array(6).fill("wild"),
   ...Array(5).fill("seven"),
-  ...Array(4).fill("paleni_bonus")
+  ...Array(4).fill("paleni_bonus"),
 ];
-const DENOMS = [5, 10, 20, 50, 100, 500, 1000];
+
+// Symbol weights for bonus spins (slightly increased rare symbols)
+const symbolsWeightedBonus = [
+  ...Array(18).fill("zeki"),
+  ...Array(9).fill("zarzin"),
+  ...Array(18).fill("tehno"),
+  ...Array(13).fill("bojche_koks"),
+  ...Array(13).fill("aco_resen"),
+  ...Array(9).fill("sigma"),
+  ...Array(9).fill("tino"),
+  ...Array(7).fill("cele"),
+  ...Array(11).fill("srechko"), // slightly more
+  ...Array(11).fill("shule"),   // slightly more
+  ...Array(7).fill("wild"),
+  ...Array(6).fill("seven"),
+  ...Array(4).fill("paleni_bonus"),
+];
+
+// --- Denominations (UPDATED) ---
+const DENOMS = [5, 10, 20, 50, 100, 500, 1000, 2500, 5000];
+
+// --- Payout Table (UPDATED) ---
 const payoutTable = {
   zeki: 2,
   tehno: 3,
-  zarzin: 4,
+  zarzin: 12, // buffed value (covers xarxin)
   bojche_koks: 5,
   aco_resen: 8,
   sigma: 12,
@@ -443,8 +448,12 @@ const payoutTable = {
   cele: 25,
   wild: 50,
   seven: 80,
+  srechko: 11, // new rare symbol payout
+  shule: 11,   // new rare symbol payout
   bonus: 0,
 };
+
+// --- Paylines ---
 const totalSlots = 15;
 const paylines = [
   [0, 1, 2, 3, 4],
@@ -469,6 +478,7 @@ const paylineNames = [
   "Inverted V Bottom"
 ];
 
+// --- Main App ---
 function App() {
   const [balance, setBalance] = useState(0);
   const [bet, setBet] = useState(5);
@@ -484,10 +494,10 @@ function App() {
   const [winningPayline, setWinningPayline] = useState("");
   const [showPaylineInfo, setShowPaylineInfo] = useState(false);
   const [reelSpinning, setReelSpinning] = useState(Array(totalSlots).fill(false));
-  const [showBonusWin, setShowBonusWin] = useState(false); // <-- For BonusWin image
-  const winCountRef = useRef(null);
+  const [showBonusWin, setShowBonusWin] = useState(false);
+  const [bonusActive, setBonusActive] = useState(false);
 
-  // Audio refs
+  const winCountRef = useRef(null);
   const audioRefs = useRef({
     bonus: null,
     hugewin: null,
@@ -497,7 +507,7 @@ function App() {
     win: null
   });
 
-  // Initialize audio
+  // Audio
   useEffect(() => {
     audioRefs.current = {
       bonus: new Howl({ src: [`${process.env.PUBLIC_URL || ""}/sounds/bonus.mp3`] }),
@@ -517,17 +527,14 @@ function App() {
       });
     };
   }, []);
-
   const playSound = (soundName) => {
     try {
       const audio = audioRefs.current[soundName];
       if (audio) {
         audio.stop();
-        audio.play().catch(e => console.log('Audio play failed:', e));
+        audio.play().catch(e => {});
       }
-    } catch (error) {
-      console.log('Sound play error:', error);
-    }
+    } catch (error) {}
   };
 
   useEffect(() => {
@@ -539,7 +546,6 @@ function App() {
       return () => clearTimeout(timeout);
     }
   }, [showWinCounter]);
-
   useEffect(() => {
     const onKeyDown = e => {
       if (e.code === "Space" && !spinning) spin();
@@ -547,7 +553,6 @@ function App() {
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [spinning, bet, balance, freeSpins]);
-
   useEffect(() => {
     const handleWheel = (e) => {
       if (!spinning && e.deltaY > 0 && (freeSpins > 0 || balance >= bet)) {
@@ -559,16 +564,33 @@ function App() {
     return () => window.removeEventListener("wheel", handleWheel);
   }, [spinning, bet, balance, freeSpins]);
 
-  const getRandomSymbol = () =>
-    symbolsWeighted[Math.floor(Math.random() * symbolsWeighted.length)];
+  // Helper to get correct symbol set based on bonus
+  const getSymbolsArray = () => (bonusActive ? symbolsWeightedBonus : symbolsWeighted);
 
-  const getRandomSymbolForIndex = (index) => {
+  // --- Symbol selection with slight column bias ---
+  const prevColSymbolsRef = useRef(Array(5).fill(null));
+  const getRandomSymbol = (symbolsArr) =>
+    symbolsArr[Math.floor(Math.random() * symbolsArr.length)];
+  // Slightly increase chance of symbol continuing in next column
+  const getRandomSymbolForIndex = (index, prevSymbolsArr = null) => {
     const col = index % 5;
-    if (col === 0 || col === 4) {
-      const filteredSymbols = symbolsWeighted.filter(s => s !== "wild");
-      return filteredSymbols[Math.floor(Math.random() * filteredSymbols.length)];
+    const symbolsArr = getSymbolsArray();
+    if (col === 0) {
+      // First column, pick randomly
+      const sym = getRandomSymbol(symbolsArr);
+      if (prevSymbolsArr) prevSymbolsArr[0] = sym;
+      return sym;
     } else {
-      return getRandomSymbol();
+      // Slight bias: 80% normal, 20% repeat previous column symbol
+      let prevSym = prevColSymbolsRef.current[col - 1];
+      if (prevSymbolsArr) prevSym = prevSymbolsArr[col - 1];
+      if (prevSym && Math.random() < 0.2) {
+        return prevSym;
+      } else {
+        const sym = getRandomSymbol(symbolsArr);
+        if (prevSymbolsArr) prevSymbolsArr[col] = sym;
+        return sym;
+      }
     }
   };
 
@@ -586,13 +608,18 @@ function App() {
     setTimeout(() => setExplosions([]), 1000);
   };
 
+  // --- Spin Logic (with fixes) ---
+  const [bonusJustHit, setBonusJustHit] = useState(false);
   const spin = () => {
     if (spinning) return;
     if (freeSpins === 0 && balance < bet) return;
+    if (bonusJustHit) return; // Prevent denom change after bonus hit
     if (freeSpins > 0) {
       setFreeSpins(fs => fs - 1);
+      setBonusActive(true);
     } else {
       setBalance(b => b - bet);
+      setBonusActive(false);
     }
     setWinningIndices([]);
     setWinningPayline("");
@@ -600,10 +627,11 @@ function App() {
     playSound('spin');
     setReelSpinning(Array(totalSlots).fill(true));
     let next = [...slots];
+    let prevSymbolsArr = Array(5).fill(null);
     for (let i = 0; i < totalSlots; i++) {
       const col = i % 5;
       setTimeout(() => {
-        next[i] = getRandomSymbolForIndex(i);
+        next[i] = getRandomSymbolForIndex(i, prevSymbolsArr);
         setSlots([...next]);
         setReelSpinning(prev => {
           const newState = [...prev];
@@ -618,38 +646,50 @@ function App() {
         }
       }, 200 * col + 100 * Math.floor(i / 5));
     }
+    prevColSymbolsRef.current = prevSymbolsArr;
   };
 
+  // --- Evaluate Wins (multi-line, bonus, paleni_bonus fix) ---
   const evaluate = (result) => {
     let bestWin = 0;
     let bestWinningSlots = [];
     let bestPaylineName = "";
+    let anyWin = false;
+    let paleniBonusHit = false;
+    let linesWithWins = [];
     paylines.forEach((line, index) => {
       const lineSymbols = line.map(pos => result[pos]);
       const { amount, indices } = calcLineWin(lineSymbols, line);
-      if (amount > bestWin) {
-        bestWin = amount;
-        bestWinningSlots = indices;
-        bestPaylineName = paylineNames[index];
+      if (amount > 0) {
+        anyWin = true;
+        linesWithWins.push({ amount, indices, payline: paylineNames[index] });
+        if (amount > bestWin) {
+          bestWin = amount;
+          bestWinningSlots = indices;
+          bestPaylineName = paylineNames[index];
+        }
       }
     });
-    if (bestWin > 0) {
-      setBalance(b => b + bestWin);
-      setWinAmount(bestWin);
+    // Show all lines with wins (multi-line)
+    if (linesWithWins.length > 0) {
+      // Sum all wins for balance
+      const totalWin = linesWithWins.reduce((acc, l) => acc + l.amount, 0);
+      setBalance(b => b + totalWin);
+      setWinAmount(totalWin);
       setShowWinCounter(true);
-      setWinningIndices(bestWinningSlots);
-      setWinningPayline(bestPaylineName);
+      setWinningIndices(linesWithWins.flatMap(l => l.indices));
+      setWinningPayline(linesWithWins.map(l => l.payline).join(", "));
       setShowPaylineInfo(true);
-      const multiplier = bestWin / bet;
+      const multiplier = totalWin / bet;
       if (multiplier >= 100) {
         playSound('maxwin');
         triggerExplosions(30);
-        setShowBonusWin(true);
+        setShowBonusWin(false);
         setTimeout(() => setShowBonusWin(false), 2000);
       } else if (multiplier >= 30) {
         playSound('hugewin');
         triggerExplosions(20);
-        setShowBonusWin(true);
+        setShowBonusWin(false);
         setTimeout(() => setShowBonusWin(false), 2000);
       } else {
         playSound('win');
@@ -661,6 +701,7 @@ function App() {
       setWinningIndices([]);
       setWinningPayline("");
     }
+    // Bonus logic
     const bonusCount = result.filter(s => s === "paleni_bonus").length;
     if (bonusCount >= 3) {
       setFreeSpins(fs => fs + 5);
@@ -668,9 +709,12 @@ function App() {
       setShowBonusWin(true);
       setTimeout(() => setShowBonusWin(false), 2000);
       playSound('bonus');
+      setBonusJustHit(true);
+      setTimeout(() => setBonusJustHit(false), 1000); // Prevent denom change for a moment
     }
   };
 
+  // --- Line Win Calculation ---
   const calcLineWin = (lineSymbols, lineIndices) => {
     let maxWin = 0;
     let winningIndices = [];
@@ -705,10 +749,12 @@ function App() {
     return { amount: maxWin, indices: winningIndices };
   };
 
+  // --- Add Money ---
   const addMoney = () => {
     setBalance(b => b + 100);
   };
 
+  // --- Animated Win Display ---
   const [displayWin, setDisplayWin] = useState(0);
   useEffect(() => {
     if (showWinCounter) {
@@ -727,7 +773,6 @@ function App() {
       setDisplayWin(0);
     }
   }, [showWinCounter, winAmount]);
-
   useEffect(() => {
     if (showBonusModal) {
       const t = setTimeout(() => setShowBonusModal(false), 1500);
@@ -735,6 +780,10 @@ function App() {
     }
   }, [showBonusModal]);
 
+  // --- Denomination Change Lock if Bonus Hit ---
+  const canChangeDenom = !spinning && !bonusJustHit && freeSpins === 0;
+
+  // --- Render ---
   return (
     <>
       <GlobalStyle />
@@ -753,8 +802,8 @@ function App() {
               <img
                 src={`${process.env.PUBLIC_URL || ""}/images/${sym}.png`}
                 alt={sym}
-                draggable={false}
                 className={reelSpinning[i] ? "spinning" : ""}
+                draggable={false}
               />
             </Slot>
           ))}
@@ -765,18 +814,15 @@ function App() {
             {DENOMS.map(d => (
               <Button
                 key={d}
+                onClick={() => canChangeDenom && setBet(d)}
                 className={bet === d ? "active" : ""}
-                onClick={() => setBet(d)}
-                disabled={spinning || balance < d}
+                disabled={!canChangeDenom || balance < d}
               >
                 {d} MKD
               </Button>
             ))}
           </BetOptions>
-          <SpinButton
-            onClick={spin}
-            disabled={spinning || (freeSpins === 0 && balance < bet)}
-          >
+          <SpinButton onClick={spin} disabled={spinning || balance < bet && freeSpins === 0}>
             {freeSpins > 0 ? `Free Spin (${freeSpins})` : "ШТРАКАЈ"}
           </SpinButton>
           <AddMoneyButton onClick={addMoney} disabled={spinning}>
@@ -794,11 +840,7 @@ function App() {
         </WinCounter>
         {showBonusWin && (
           <BonusWin>
-            <img
-              src={`${process.env.PUBLIC_URL || ""}/images/bonuswin.png`}
-              alt="Bonus Win"
-              draggable={false}
-            />
+            <img src={`${process.env.PUBLIC_URL || ""}/images/bonuswin.png`} alt="Bonus Win" />
           </BonusWin>
         )}
         {showBonusModal && (
@@ -806,13 +848,7 @@ function App() {
             <ModalBox onClick={e => e.stopPropagation()}>
               <ModalTitle>Бонус Игра!</ModalTitle>
               <div>Освоивте 5 бесплатни вртења!</div>
-              <img
-                src={`${process.env.PUBLIC_URL || ""}/images/paleni_bonus.png`}
-                alt="Bonus"
-                style={{ width: "120px", margin: "20px auto" }}
-                draggable={false}
-                onClick={() => setShowBonusModal(false)}
-              />
+              <ModalButton onClick={() => setShowBonusModal(false)}>OK</ModalButton>
             </ModalBox>
           </ModalBackdrop>
         )}
@@ -839,8 +875,7 @@ function App() {
                           <img
                             src={`${process.env.PUBLIC_URL || ""}/images/${sym}.png`}
                             alt={sym}
-                            style={{ width: "32px", verticalAlign: "middle" }}
-                            draggable={false}
+                            style={{ width: 32, verticalAlign: "middle" }}
                           />
                         </td>
                         <td>{val * bet}</td>
